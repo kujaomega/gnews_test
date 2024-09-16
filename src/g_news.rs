@@ -64,7 +64,7 @@ pub async fn news(cache: web::Data<ArticleCache>, query_params: web::Query<ListN
         Some(value) => value,
         None => "",
     };
-    let cache_key = format!("{n}{title}{keywords}");
+    let cache_key = format!("{n}_{title}_{keywords}");
 
     let mut cache_guard = cache.lock().unwrap();
 
